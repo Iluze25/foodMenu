@@ -1,186 +1,117 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Menu</title>
     <style>
-        .FoodCategory {
-            display: flex;
-            flex-direction: column;
-        }
-        .FoodCategory > .NameCategory {
-            display: flex;
-            flex-direction: row;
-            
-        }
-        .FoodCategory > .NameCategory > .List {
-            padding: 5px;
-            margin: 5px;
-            text-align: center;
-        }
-
-        .FoodCategory > .NameCategory > .Flavor {
-            text-align: left;
-        }
-
+      .FoodCategory {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+      }
+      .FoodCategory > header {
+        text-align: left;
+        color: black;
+      }
+      .FoodCategory > .NameCategory {
+        display: grid;
+        grid-template-columns: 150px 150px 150px 150px;
+      }
+      .FoodCategory > .NameCategory > .List {
+        background-color: blueviolet;
+        margin: 5px;
+        padding: 5px;
+      }
+      .FoodCategory > .NameCategory > .ChildList {
+        background-color: blueviolet;
+        margin: 5px;
+        padding: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .FoodCategory > .NameCategory > .NameListFlavor {
+        text-align: left;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
-        <section>
-            <div class="FoodCategory ToastSeries">
-                <header>
-                    <h2>TOAST SERIES</h2>
-                </header>
-                <div class="NameCategory">
-                    <div class="List Flavor">
-                        <h3>FLAVOR</h3>
-                        <div class="ChildList NameListFlavor ChocoMilk">
-                            Choco Milk
-                        </div>
-                        <div class="ChildList NameListFlavor Taro">
-                            Taro
-                        </div>
-                        <div class="ChildList NameListFlavor GreenTea">
-                            Green Tea
-                        </div>
-                        <div class="ChildList NameListFlavor CheeseMilk">
-                            Cheese Milk
-                        </div>
-                        <div class="ChildList NameListFlavor RainbowBlueBerry">
-                            Rainbow Blueberry
-                        </div>
-                        <div class="ChildList NameListFlavor SpecialChoco">
-                            Special Choco
-                        </div>
-                        <div class="ChildList NameListFlavor ChocoCheese">
-                            Choco Cheese
-                        </div>
-                        <div class="ChildList NameListFlavor SpecialCheese">
-                            Special Cheese
-                        </div>
-                        <div class="ChildList NameListFlavor DurianOriginal">
-                            Durian Original
-                        </div>
-                    </div>
-                    <div class="List SelimutHijau">
-                        <h3>SELIMUT HIJAU</h3>
-                        <div class="ChildList PriceSelimutHijau ChocoMilk">
-                            18k
-                        </div>
-                        <div class="ChildList PriceSelimutHijau Taro">
-                            18k
-                        </div>
-                        <div class="ChildList PriceSelimutHijau GreenTea">
-                            18k
-                        </div>
-                        <div class="ChildList PriceSelimutHijau CheeseMilk">
-                            18k
-                        </div>
-                        <div class="ChildList PriceSelimutHijau RainbowBlueBerry">
-                            18k
-                        </div>
-                        <div class="ChildList PriceSelimutHijau SpecialChoco">
-                            20k
-                        </div>
-                        <div class="ChildList PriceSelimutHijau ChocoCheese">
-                            20k
-                        </div>
-                        <div class="ChildList PriceSelimutHijau SpecialCheese">
-                            20k
-                        </div>
-                        <div class="ChildList PriceSelimutHijau DurianOriginal">
-                            30k
-                        </div>
-                    </div>
-                    <div class="List WheatToast">
-                        <h3>WHEAT TOAST</h3>
-                        <div class="ChildList PriceWheatToast ChocoMilk">
-                            13k
-                        </div>
-                        <div class="ChildList PriceWheatToast Taro">
-                            14k
-                        </div>
-                        <div class="ChildList PriceWheatToast GreenTea">
-                            14k
-                        </div>
-                        <div class="ChildList PriceWheatToast CheeseMilk">
-                            15k
-                        </div>
-                        <div class="ChildList PriceWheatToast RainbowBlueBerry">
-                            16k
-                        </div>
-                        <div class="ChildList PriceWheatToast SpecialChoco">
-                            16k
-                        </div>
-                        <div class="ChildList PriceWheatToast ChocoCheese">
-                            18k
-                        </div>
-                        <div class="ChildList PriceWheatToast SpecialCheese">
-                            18k
-                        </div>
-                        <div class="ChildList PriceWheatToast DurianOriginal">
-                            26k
-                        </div>
-                    </div>
-                    <div class="List SpecialToast">
-                        <h3>SPECIAL TOAST</h3>
-                        <div class="ChildList PriceSpecialToast ChocoMilk">
-                            12k
-                        </div>
-                        <div class="ChildList PriceSpecialToast Taro">
-                            13k
-                        </div>
-                        <div class="ChildList PriceSpecialToast GreenTea">
-                            13k
-                        </div>
-                        <div class="ChildList PriceSpecialToast CheeseMilk">
-                            14k
-                        </div>
-                        <div class="ChildList PriceSpecialToast RainbowBlueBerry">
-                            15k
-                        </div>
-                        <div class="ChildList PriceSpecialToast SpecialChoco">
-                            15k
-                        </div>
-                        <div class="ChildList PriceSpecialToast ChocoCheese">
-                            17k
-                        </div>
-                        <div class="ChildList PriceSpecialToast SpecialCheese">
-                            17k
-                        </div>
-                        <div class="ChildList PriceSpecialToast DurianOriginal">
-                            25k
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="FoodCategory">
+      <section>
+        <div class="FoodCategory ToastSeries">
+          <header>
+            <h2>TOAST SERIES</h2>
+          </header>
+          <div class="NameCategory">
+            <div class="List Flavor">FLAVOR</div>
+            <div class="List SelimutHijau">SELIMUT HIJAU</div>
+            <div class="List WheatToast">WHEAT TOAST</div>
+            <div class="List SpecialToast">SPECIAL TOAST</div>
 
-            </div>
-            <div class="FoodCategory">
+            <div class="ChildList NameListFlavor ChocoMilk">Choco Milk</div>
+            <div class="ChildList PriceSelimutHijau ChocoMilk">18k</div>
+            <div class="ChildList PriceWheatToast ChocoMilk">13k</div>
+            <div class="ChildList PriceSpecialToast ChocoMilk">12k</div>
 
-            </div>
-            <div class="FoodCategory">
+            <div class="ChildList NameListFlavor Taro">Taro</div>
+            <div class="ChildList PriceSelimutHijau Taro">18k</div>
+            <div class="ChildList PriceWheatToast Taro">14k</div>
+            <div class="ChildList PriceSpecialToast Taro">13k</div>
 
-            </div>
-            <div class="FoodCategory">
+            <div class="ChildList NameListFlavor GreenTea">Green Tea</div>
+            <div class="ChildList PriceSelimutHijau GreenTea">18k</div>
+            <div class="ChildList PriceWheatToast GreenTea">14k</div>
+            <div class="ChildList PriceSpecialToast GreenTea">13k</div>
 
-            </div>
-            <div class="FoodCategory">
+            <div class="ChildList NameListFlavor CheeseMilk">Cheese Milk</div>
+            <div class="ChildList PriceSelimutHijau CheeseMilk">18k</div>
+            <div class="ChildList PriceWheatToast CheeseMilk">15k</div>
+            <div class="ChildList PriceSpecialToast CheeseMilk">14k</div>
 
+            <div class="ChildList NameListFlavor RainbowBlueBerry">
+              Rainbow Blueberry
             </div>
-            <div class="FoodCategory">
+            <div class="ChildList PriceSelimutHijau RainbowBlueBerry">18k</div>
+            <div class="ChildList PriceWheatToast RainbowBlueBerry">16k</div>
+            <div class="ChildList PriceSpecialToast RainbowBlueBerry">15k</div>
 
+            <div class="ChildList NameListFlavor SpecialChoco">
+              Special Choco
             </div>
-            <div class="FoodCategory">
+            <div class="ChildList PriceSelimutHijau SpecialChoco">20k</div>
+            <div class="ChildList PriceWheatToast SpecialChoco">16k</div>
+            <div class="ChildList PriceSpecialToast SpecialChoco">15k</div>
 
-            </div>
-            <div class="FoodCategory">
+            <div class="ChildList NameListFlavor ChocoCheese">Choco Cheese</div>
+            <div class="ChildList PriceSelimutHijau ChocoCheese">20k</div>
+            <div class="ChildList PriceWheatToast ChocoCheese">18k</div>
+            <div class="ChildList PriceSpecialToast ChocoCheese">17k</div>
 
+            <div class="ChildList NameListFlavor SpecialCheese">
+              Special Cheese
             </div>
-        </section>
+            <div class="ChildList PriceSelimutHijau SpecialCheese">20k</div>
+            <div class="ChildList PriceWheatToast SpecialCheese">18k</div>
+            <div class="ChildList PriceSpecialToast SpecialCheese">17k</div>
+
+            <div class="ChildList NameListFlavor DurianOriginal">
+              Durian Original
+            </div>
+            <div class="ChildList PriceSelimutHijau DurianOriginal">30k</div>
+            <div class="ChildList PriceWheatToast DurianOriginal">26k</div>
+            <div class="ChildList PriceSpecialToast DurianOriginal">25k</div>
+          </div>
+        </div>
+        <div class="FoodCategory"></div>
+        <div class="FoodCategory"></div>
+        <div class="FoodCategory"></div>
+        <div class="FoodCategory"></div>
+        <div class="FoodCategory"></div>
+        <div class="FoodCategory"></div>
+        <div class="FoodCategory"></div>
+        <div class="FoodCategory"></div>
+      </section>
     </div>
-</body>
+  </body>
 </html>
