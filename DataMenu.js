@@ -190,3 +190,29 @@ for (let valuesBread of BreadArray) {
   document.getElementById("BREAD").appendChild(xxxxPcs);
 }
 // BREAD--------------------------------------------------------------------------
+
+// NOODLE-------------------------------------------------------------------------
+// NOODLE original
+const NoodleArrayObj = [
+  { Name: "Mie Goreng", Price: "8k" },
+  { Name: "Mie Rendang", Price: "8k" },
+  { Name: "Mie Kari", Price: "8k" },
+  { Name: "Mie Soto", Price: "8k" },
+  { Name: "Mie Sambal Matha", Price: "8k" },
+];
+
+// NOODLE Addition
+const NoodleAdditionArrayObj = [
+  { Name: "Telor", Price: "+5k" },
+  { Name: "Double Mie", Price: "+6k" },
+  { Name: "Sayur Caisim", Price: "+2k" },
+  { Name: "Sosis", Price: "+4k" },
+];
+
+// Warp NOODLE data
+const NOODLE = document.createElement("div");
+NOODLE.setAttribute("id", "NOODLE");
+NOODLE.textContent = "NOODLE";
+container.appendChild(NOODLE);
+
+// Belum selesai, ingin menyelesaikan terlabih dahulu titik automatic
