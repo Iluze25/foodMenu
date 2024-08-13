@@ -57,69 +57,136 @@ const ToastSeriesArray = [
   DurianOriginal,
 ];
 
-function generateToast() {
-  // Membuat warp untuk Toast series
-  const container = document.getElementById("container");
-  const ToastSeriess = document.createElement("div");
-  ToastSeriess.setAttribute("id", "ToastSeries");
-  ToastSeriess.textContent = "TOAST SERIES";
-  container.appendChild(ToastSeriess);
+// Membuat warp untuk Toast series
+const container = document.getElementById("container");
+const ToastSeriess = document.createElement("div");
+ToastSeriess.setAttribute("id", "ToastSeries");
+ToastSeriess.textContent = "TOAST SERIES";
+container.appendChild(ToastSeriess);
 
-  // Membuat Warp Untuk List name
-  const WarpToastSeries = document.createElement("div");
-  WarpToastSeries.setAttribute("id", "WarpMenu");
-  document.getElementById("ToastSeries").appendChild(WarpToastSeries);
+// Membuat Warp Untuk List name
+const WarpToastSeries = document.createElement("div");
+WarpToastSeries.setAttribute("id", "WarpMenu");
+document.getElementById("ToastSeries").appendChild(WarpToastSeries);
 
-  // Child Toast Series Flavor, Selimut Hijau, Wheat Toast, Special Toast
-  // FLAVOR
-  const ToastSeriesFlavor = document.createElement("div");
-  ToastSeriesFlavor.setAttribute("class", "HeaderMenu");
-  ToastSeriesFlavor.textContent = "FLAVOR";
-  document.getElementById("WarpMenu").appendChild(ToastSeriesFlavor);
+// Child Toast Series Flavor, Selimut Hijau, Wheat Toast, Special Toast
+// FLAVOR
+const ToastSeriesFlavor = document.createElement("div");
+ToastSeriesFlavor.setAttribute("class", "HeaderMenu");
+ToastSeriesFlavor.textContent = "FLAVOR";
+document.getElementById("WarpMenu").appendChild(ToastSeriesFlavor);
 
-  // Selimut Hijau
-  const ToastSeriesSelimutHijau = document.createElement("div");
-  ToastSeriesSelimutHijau.setAttribute("class", "HeaderMenu");
-  ToastSeriesSelimutHijau.textContent = "SELIMUT HIJAU";
-  document.getElementById("WarpMenu").appendChild(ToastSeriesSelimutHijau);
+// Selimut Hijau
+const ToastSeriesSelimutHijau = document.createElement("div");
+ToastSeriesSelimutHijau.setAttribute("class", "HeaderMenu");
+ToastSeriesSelimutHijau.textContent = "SELIMUT HIJAU";
+document.getElementById("WarpMenu").appendChild(ToastSeriesSelimutHijau);
+
+// WHEAT TOAST
+const ToastSeriesWheatToast = document.createElement("div");
+ToastSeriesWheatToast.setAttribute("class", "HeaderMenu");
+ToastSeriesWheatToast.textContent = "WHEAT TOAST";
+document.getElementById("WarpMenu").appendChild(ToastSeriesWheatToast);
+
+// SPECIAL TOAST
+const ToastSeriesSpecialToast = document.createElement("div");
+ToastSeriesSpecialToast.setAttribute("class", "HeaderMenu");
+ToastSeriesSpecialToast.textContent = "SPECIAL TOAST";
+document.getElementById("WarpMenu").appendChild(ToastSeriesSpecialToast);
+
+// Child Name List
+for (x of ToastSeriesArray) {
+  // Flavor
+  const Flavor = document.createElement("div");
+  Flavor.setAttribute("class", "NameList ToastSeriesFlavor");
+  Flavor.textContent = x.Flavor;
+  document.getElementById("WarpMenu").appendChild(Flavor);
+
+  // SELIMUT HIJAU
+  const SelimutHijau = document.createElement("div");
+  SelimutHijau.setAttribute("class", "NameList ToastSeriesSelimutHijau");
+  SelimutHijau.textContent = x.PriceSelimutHijau;
+  document.getElementById("WarpMenu").appendChild(SelimutHijau);
 
   // WHEAT TOAST
-  const ToastSeriesWheatToast = document.createElement("div");
-  ToastSeriesWheatToast.setAttribute("class", "HeaderMenu");
-  ToastSeriesWheatToast.textContent = "WHEAT TOAST";
-  document.getElementById("WarpMenu").appendChild(ToastSeriesWheatToast);
+  const WheatToast = document.createElement("div");
+  WheatToast.setAttribute("class", "NameList ToastSeriesWheatToast");
+  WheatToast.textContent = x.PriceWheatToast;
+  document.getElementById("WarpMenu").appendChild(WheatToast);
 
-  // SPECIAL TOAST
-  const ToastSeriesSpecialToast = document.createElement("div");
-  ToastSeriesSpecialToast.setAttribute("class", "HeaderMenu");
-  ToastSeriesSpecialToast.textContent = "SPECIAL TOAST";
-  document.getElementById("WarpMenu").appendChild(ToastSeriesSpecialToast);
-
-  // Child Name List
-  for (x of ToastSeriesArray) {
-    // Flavor
-    const Flavor = document.createElement("div");
-    Flavor.setAttribute("class", "NameList Flavor");
-    Flavor.textContent = x.Flavor;
-    document.getElementById("WarpMenu").appendChild(Flavor);
-
-    // SELIMUT HIJAU
-    const SelimutHijau = document.createElement("div");
-    SelimutHijau.setAttribute("class", "NameList SelimutHijau");
-    SelimutHijau.textContent = x.PriceSelimutHijau;
-    document.getElementById("WarpMenu").appendChild(SelimutHijau);
-
-    // WHEAT TOAST
-    const WheatToast = document.createElement("div");
-    WheatToast.setAttribute("class", "NameList WheatToast");
-    WheatToast.textContent = x.PriceWheatToast;
-    document.getElementById("WarpMenu").appendChild(WheatToast);
-
-    //SPECIAL TOAST
-    const SpecialToast = document.createElement("div");
-    SpecialToast.setAttribute("class", "NameList SpecialToast");
-    SpecialToast.textContent = x.PriceSpecialToast;
-    document.getElementById("WarpMenu").appendChild(SpecialToast);
-  }
-  document.getElementById("generateToast").style.display = "none";
+  //SPECIAL TOAST
+  const SpecialToast = document.createElement("div");
+  SpecialToast.setAttribute("class", "NameList ToastSeriesSpecialToast");
+  SpecialToast.textContent = x.PriceSpecialToast;
+  document.getElementById("WarpMenu").appendChild(SpecialToast);
 }
+
+// Toast Series----------------------------------------------------------------------------------------------------------------------------------
+
+// BREAD ----------------------------------------------------------------------------------------------------------------------------------------
+// Function BREAD untuk Object constructor
+function BreadFunctObj(MilkBun, xPcs, xxxxPcs) {
+  this.MilkBun = MilkBun;
+  this.xPcs = xPcs;
+  this.xxxxPcs = xxxxPcs;
+}
+
+// Object Bread
+const BreadOriginal = new BreadFunctObj("Original", "8k", "30k");
+const BreadStrawberry = new BreadFunctObj("Strawberry", "8k", "30k");
+const BreadCoklat = new BreadFunctObj("Coklat", "8k", "30k");
+const BreadTaro = new BreadFunctObj("Taro", "8k", "30k");
+const BreadGreenTea = new BreadFunctObj("Grean Tea", "8k", "30k");
+
+// Array Bread
+const BreadArray = [
+  BreadOriginal,
+  BreadStrawberry,
+  BreadCoklat,
+  BreadTaro,
+  BreadGreenTea,
+];
+
+// Container data Bread
+const BREAD = document.createElement("div");
+BREAD.setAttribute("id", "BREAD");
+BREAD.textContent = "BREAD";
+container.appendChild(BREAD);
+
+// Header Bread Data : MILK BUN, 1PCS,  4PCS
+const BreadMilkBun = document.createElement("div");
+BreadMilkBun.setAttribute("class", "HeaderMenu");
+BreadMilkBun.textContent = "MILK BUN";
+document.getElementById("BREAD").appendChild(BreadMilkBun);
+
+const Bread1Pcs = document.createElement("div");
+Bread1Pcs.setAttribute("class", "HeaderMenu");
+Bread1Pcs.textContent = "1 PCS";
+document.getElementById("BREAD").appendChild(Bread1Pcs);
+
+const Bread4Pcs = document.createElement("div");
+Bread4Pcs.setAttribute("class", "HeaderMenu");
+Bread4Pcs.textContent = "4 PCS";
+document.getElementById("BREAD").appendChild(Bread4Pcs);
+
+// List data Menu Food : Original, Strawberry, coklat, Taro, Green Tea
+for (let valuesBread of BreadArray) {
+  // MILK BUN
+  const MilkBun = document.createElement("div");
+  MilkBun.setAttribute("class", "NameList BreadMilkBun");
+  MilkBun.textContent = valuesBread.MilkBun;
+  document.getElementById("BREAD").appendChild(MilkBun);
+
+  // 1 PCS
+  const xPcs = document.createElement("div");
+  xPcs.setAttribute("class", "NameList Bread1Pcs");
+  xPcs.textContent = valuesBread.xPcs;
+  document.getElementById("BREAD").appendChild(xPcs);
+
+  // 4 PCS
+  const xxxxPcs = document.createElement("div");
+  xxxxPcs.setAttribute("class", "NameList Bread4Pcs");
+  xxxxPcs.textContent = valuesBread.xxxxPcs;
+  document.getElementById("BREAD").appendChild(xxxxPcs);
+}
+// BREAD--------------------------------------------------------------------------
