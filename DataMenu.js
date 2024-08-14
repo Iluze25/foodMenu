@@ -215,4 +215,35 @@ NOODLE.setAttribute("id", "NOODLE");
 NOODLE.textContent = "NOODLE";
 container.appendChild(NOODLE);
 
-// Belum selesai, ingin menyelesaikan terlabih dahulu titik automatic
+// Menambahkan list
+const jmlNoodleAryObj = NoodleArrayObj.length;
+for (let valuesNoodles = 0; valuesNoodles < jmlNoodleAryObj; valuesNoodles++) {
+  const NoodleContainer = document.getElementById("NOODLE");
+  const NoodleListName = document.createElement("div");
+  NoodleListName.setAttribute("class", "NameList NameListNoodle");
+  NoodleListName.setAttribute("id", `NoodleNameList${valuesNoodles}`);
+  NoodleListName.style.width = "fit-content";
+  NoodleListName.textContent = NoodleArrayObj[valuesNoodles].Name;
+  NoodleContainer.appendChild(NoodleListName);
+}
+// Menambahkan dots
+function NoodDotsFunct() {
+  do {
+    document.getElementById("NoodleNameList0").innerHTML += ".";
+  } while (
+    document.getElementById("NoodleNameList0").offsetWidth <
+    document.getElementById("NOODLE").offsetWidth
+  );
+  if (
+    document.getElementById("NoodleNameList0").offsetWidth >=
+    document.getElementById("NOODLE").offsetWidth
+  ) {
+    let textNoodlesDots = document.getElementById("NoodleNameList0").innerText;
+    document.getElementById("NoodleNameList0").innerText =
+      textNoodlesDots.substring(0, textNoodlesDots.length - 1);
+  }
+  console.log(document.getElementById("NOODLE").offsetWidth);
+}
+setInterval(NoodDotsFunct, 1000);
+
+// PERBAIKAN DOTS, belum selesai. Masih ada bug, jadi ketika width di perkecil secara langsung titik tetap berada pada angka yang tidak seaharusnya
