@@ -228,6 +228,7 @@ for (let valuesNoodles = 0; valuesNoodles < jmlNoodleAryObj; valuesNoodles++) {
 }
 // Menambahkan dots
 function NoodDotsFunct() {
+  document.getElementById("NoodleNameList0").innerHTML = NoodleArrayObj[0].Name;
   do {
     document.getElementById("NoodleNameList0").innerHTML += ".";
   } while (
@@ -242,8 +243,6 @@ function NoodDotsFunct() {
     document.getElementById("NoodleNameList0").innerText =
       textNoodlesDots.substring(0, textNoodlesDots.length - 1);
   }
-  console.log(document.getElementById("NOODLE").offsetWidth);
 }
-setInterval(NoodDotsFunct, 1000);
-
-// PERBAIKAN DOTS, belum selesai. Masih ada bug, jadi ketika width di perkecil secara langsung titik tetap berada pada angka yang tidak seaharusnya
+NoodDotsFunct();
+// Tinggal bagian Price nya
