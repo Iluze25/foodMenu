@@ -272,17 +272,17 @@ function noodlesDot() {
         noodlesListNamedots.substring(0, noodlesListNamedots.length - 1);
     }
     // ------------------------------------------------------------------------------------------------------------BELUM SELESAI MODE PENEGRJAAN
-    let dotsTrimTextNoodle = document.getElementById(
-      `NoodleNameList${valuesNoodleDots}`
-    );
-    dotsTrimTextNoodle = dotsTrimTextNoodle.innerText.substring(
-      NoodleNameListTextDefault.length,
-      dotsTrimTextNoodle.innerText.length
-    );
-    const returnNoodleLisrName = document.getElementById(
-      `NoodleNameList${valuesNoodleDots}`
-    ).innerText;
-    returnNoodleLisrName = returnNoodleLisrName.substring();
+    // let dotsTrimTextNoodle = document.getElementById(
+    //   `NoodleNameList${valuesNoodleDots}`
+    // );
+    // dotsTrimTextNoodle = dotsTrimTextNoodle.innerText.substring(
+    //   NoodleNameListTextDefault.length,
+    //   dotsTrimTextNoodle.innerText.length
+    // );
+    // const returnNoodleLisrName = document.getElementById(
+    //   `NoodleNameList${valuesNoodleDots}`
+    // ).innerText;
+    // returnNoodleLisrName = returnNoodleLisrName.substring();
     // BELUM SELESAI MODE PENEGRJAAN------------------------------------------------------------------------------------------------------------
   }
 }
