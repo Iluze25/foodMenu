@@ -217,32 +217,75 @@ container.appendChild(NOODLE);
 
 // Menambahkan list
 const jmlNoodleAryObj = NoodleArrayObj.length;
-for (let valuesNoodles = 0; valuesNoodles < jmlNoodleAryObj; valuesNoodles++) {
-  const NoodleContainer = document.getElementById("NOODLE");
+const NoodleContainer = document.getElementById("NOODLE");
+for (
+  let valuesNoodlesName = 0;
+  valuesNoodlesName < jmlNoodleAryObj;
+  valuesNoodlesName++
+) {
   const NoodleListName = document.createElement("div");
   NoodleListName.setAttribute("class", "NameList NameListNoodle");
-  NoodleListName.setAttribute("id", `NoodleNameList${valuesNoodles}`);
+  NoodleListName.setAttribute("id", `NoodleNameList${valuesNoodlesName}`);
   NoodleListName.style.width = "fit-content";
-  NoodleListName.textContent = NoodleArrayObj[valuesNoodles].Name;
+  NoodleListName.textContent = NoodleArrayObj[valuesNoodlesName].Name;
   NoodleContainer.appendChild(NoodleListName);
 }
 // Menambahkan dots
-function NoodDotsFunct() {
-  document.getElementById("NoodleNameList0").innerHTML = NoodleArrayObj[0].Name;
-  do {
-    document.getElementById("NoodleNameList0").innerHTML += ".";
-  } while (
-    document.getElementById("NoodleNameList0").offsetWidth <
-    document.getElementById("NOODLE").offsetWidth
-  );
-  if (
-    document.getElementById("NoodleNameList0").offsetWidth >=
-    document.getElementById("NOODLE").offsetWidth
+
+// Menambahkan List Harga
+for (
+  let valuesNoodlesPrice = 0;
+  valuesNoodlesPrice < NoodleArrayObj.length;
+  valuesNoodlesPrice++
+) {
+  document.getElementById(`NoodleNameList${valuesNoodlesPrice}`).innerHTML +=
+    NoodleArrayObj[valuesNoodlesPrice].Price;
+}
+
+function noodlesDot() {
+  for (
+    let valuesNoodleDots = 0;
+    valuesNoodleDots < NoodleArrayObj.length;
+    valuesNoodleDots++
   ) {
-    let textNoodlesDots = document.getElementById("NoodleNameList0").innerText;
-    document.getElementById("NoodleNameList0").innerText =
-      textNoodlesDots.substring(0, textNoodlesDots.length - 1);
+    document.getElementById(`NoodleNameList${valuesNoodleDots}`).innerHTML =
+      NoodleArrayObj[valuesNoodleDots].Name +
+      NoodleArrayObj[valuesNoodleDots].Price;
+    const NoodleNameListTextDefault = document.getElementById(
+      `NoodleNameList${valuesNoodleDots}`
+    ).innerText;
+    do {
+      document.getElementById(`NoodleNameList${valuesNoodleDots}`).innerHTML +=
+        ".";
+    } while (
+      document.getElementById(`NoodleNameList${valuesNoodleDots}`).offsetWidth <
+      document.getElementById("NOODLE").offsetWidth
+    );
+    if (
+      document.getElementById(`NoodleNameList${valuesNoodleDots}`)
+        .offsetWidth >= document.getElementById("NOODLE").offsetWidth
+    ) {
+      const noodlesListNamedots = document.getElementById(
+        `NoodleNameList${valuesNoodleDots}`
+      ).innerText;
+      document.getElementById(`NoodleNameList${valuesNoodleDots}`).innerText =
+        noodlesListNamedots.substring(0, noodlesListNamedots.length - 1);
+    }
+    // ------------------------------------------------------------------------------------------------------------BELUM SELESAI MODE PENEGRJAAN
+    let dotsTrimTextNoodle = document.getElementById(
+      `NoodleNameList${valuesNoodleDots}`
+    );
+    dotsTrimTextNoodle = dotsTrimTextNoodle.innerText.substring(
+      NoodleNameListTextDefault.length,
+      dotsTrimTextNoodle.innerText.length
+    );
+    const returnNoodleLisrName = document.getElementById(
+      `NoodleNameList${valuesNoodleDots}`
+    ).innerText;
+    returnNoodleLisrName = returnNoodleLisrName.substring();
+    // BELUM SELESAI MODE PENEGRJAAN------------------------------------------------------------------------------------------------------------
   }
 }
-NoodDotsFunct();
-// Tinggal bagian Price nya
+
+window.addEventListener("resize", noodlesDot);
+noodlesDot();
