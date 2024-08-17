@@ -201,14 +201,6 @@ const NoodleArrayObj = [
   { Name: "Mie Sambal Matha", Price: "8k" },
 ];
 
-// NOODLE Addition
-const NoodleAdditionArrayObj = [
-  { Name: "Telor", Price: "+5k" },
-  { Name: "Double Mie", Price: "+6k" },
-  { Name: "Sayur Caisim", Price: "+2k" },
-  { Name: "Sosis", Price: "+4k" },
-];
-
 // Warp NOODLE data
 const NOODLE = document.createElement("div");
 NOODLE.setAttribute("id", "NOODLE");
@@ -242,18 +234,29 @@ for (
     NoodleArrayObj[valuesNoodlesPrice].Price;
 }
 
+// Membuat function Dots
 function noodlesDot() {
+  // Pengulangan sesuai dengan length array Noodle Ori
   for (
     let valuesNoodleDots = 0;
     valuesNoodleDots < NoodleArrayObj.length;
     valuesNoodleDots++
   ) {
+    // Menambahkan text ke dalam HTML, mengambil data dari NOodle Array Obejct Name dan Price
     document.getElementById(`NoodleNameList${valuesNoodleDots}`).innerHTML =
       NoodleArrayObj[valuesNoodleDots].Name +
       NoodleArrayObj[valuesNoodleDots].Price;
+
+    // Menetapkan text default data
     const NoodleNameListTextDefault = document.getElementById(
       `NoodleNameList${valuesNoodleDots}`
     ).innerText;
+
+    //Menetapkan text Name dan Price
+    const NoodleNameListArray = NoodleArrayObj[valuesNoodleDots].Name;
+    const NoodlePriceListArray = NoodleArrayObj[valuesNoodleDots].Price;
+
+    // Pengulangan dots menyesuaikan dengan panjang parent nya
     do {
       document.getElementById(`NoodleNameList${valuesNoodleDots}`).innerHTML +=
         ".";
@@ -261,6 +264,8 @@ function noodlesDot() {
       document.getElementById(`NoodleNameList${valuesNoodleDots}`).offsetWidth <
       document.getElementById("NOODLE").offsetWidth
     );
+
+    // Pengkondsian jika lebar melebihi parent, tidak diwarp karena
     if (
       document.getElementById(`NoodleNameList${valuesNoodleDots}`)
         .offsetWidth >= document.getElementById("NOODLE").offsetWidth
@@ -271,21 +276,35 @@ function noodlesDot() {
       document.getElementById(`NoodleNameList${valuesNoodleDots}`).innerText =
         noodlesListNamedots.substring(0, noodlesListNamedots.length - 1);
     }
-    // ------------------------------------------------------------------------------------------------------------BELUM SELESAI MODE PENEGRJAAN
-    // let dotsTrimTextNoodle = document.getElementById(
-    //   `NoodleNameList${valuesNoodleDots}`
-    // );
-    // dotsTrimTextNoodle = dotsTrimTextNoodle.innerText.substring(
-    //   NoodleNameListTextDefault.length,
-    //   dotsTrimTextNoodle.innerText.length
-    // );
-    // const returnNoodleLisrName = document.getElementById(
-    //   `NoodleNameList${valuesNoodleDots}`
-    // ).innerText;
-    // returnNoodleLisrName = returnNoodleLisrName.substring();
-    // BELUM SELESAI MODE PENEGRJAAN------------------------------------------------------------------------------------------------------------
+    //------- Memindahkah dots ke tengah ---------
+    // Menyimpan dots pada variable dotsTrimTextNoodleLength
+    let NoodleNameListTextNow = document.getElementById(
+      `NoodleNameList${valuesNoodleDots}`
+    );
+    let dotsTrimTextNoodleLength = NoodleNameListTextNow.innerText.substring(
+      NoodleNameListTextDefault.length,
+      NoodleNameListTextNow.innerText.length
+    );
+
+    // Memindahkan dots diantara name list dan price list
+    const returnNoodleLisrName = document.getElementById(
+      `NoodleNameList${valuesNoodleDots}`
+    ).innerText;
+    document.getElementById(`NoodleNameList${valuesNoodleDots}`).innerText =
+      returnNoodleLisrName.substring(0, NoodleNameListArray.length) +
+      dotsTrimTextNoodleLength +
+      NoodlePriceListArray;
   }
 }
 
+// Function di eksekusi jika ada resize pada window
 window.addEventListener("resize", noodlesDot);
 noodlesDot();
+
+// NOODLE Addition
+const NoodleAdditionArrayObj = [
+  { Name: "Telor", Price: "+5k" },
+  { Name: "Double Mie", Price: "+6k" },
+  { Name: "Sayur Caisim", Price: "+2k" },
+  { Name: "Sosis", Price: "+4k" },
+];
